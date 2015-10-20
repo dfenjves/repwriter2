@@ -1,6 +1,6 @@
 <h1>Write your Representative</h1>
-<%= form_tag do %>
+<%= form_tag("/letters/new", method: "post") do %>
     <%= label_tag(:zip, "Zip Code:") %>
     <%= text_field_tag(:zip) %>
-    <%= submit_tag("Let's Go") %>
+    <%= submit_tag %>
 <% end %>

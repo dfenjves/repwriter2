@@ -4,7 +4,15 @@ class LetterController < ApplicationController
 
   def new
     @repinfo = LegislatorFinder.new.find_by_zip(params[:zip])
-    puts "Hello #{@repinfo}"
+    @letter= Letter.new
+  end
+
+  def create
+    puts params
+  end
+
+  def show
+
   end
 
 end

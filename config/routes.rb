@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'letter#index'
-  post '/' => 'letter#new'
+  post '/letters/new' => 'letter#new'
+  resources :letters
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

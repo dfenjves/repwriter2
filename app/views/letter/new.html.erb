@@ -1,3 +1,16 @@
 <h1> Your New Letter </h1>
 
-<%=@repinfo.inspect%>
+<%= form_for @letter do |f|%>
+  <h2> Who is this letter for? </h2>
+  <% @repinfo.each do |legislator| %>
+    <%= f.radio_button :rep_id, legislator['bioguide_id'] %>
+    <%= f.label :rep_id, "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %>
+  <% end %>
+  <h2>Dear Representative,</h2>
+  <%= f.text_area :body %>
+  <h2>Sincerely,</h2>
+  <p><%= f.text_field :sender_name, :placeholder => "Your Name"  %></p>
+  <p><%= f.text_field :sender_email, :placeholder => "Your Email" %></p>
+  <p><%= f.text_area :sender_address, :placeholder => "Your Address" %></p>
+  <p><%= f.submit %></p>
+<% end %>
