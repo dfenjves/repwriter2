@@ -1,5 +1,6 @@
-class LetterController < ApplicationController
-  def index
+class LettersController < ApplicationController
+
+def index
   end
 
   def new
