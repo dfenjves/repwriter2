@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020192929) do
+ActiveRecord::Schema.define(version: 20151021151351) do
 
   create_table "letters", force: :cascade do |t|
     t.string   "recipient_name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151020192929) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.boolean  "sent"
-    t.integer  "rep_id"
+    t.string   "rep_id"
   end
 
 end

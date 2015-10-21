@@ -1,1 +1,6 @@
-<h1>MAKE THE LETTER</h1>
+
+<p>The Honorable <%= "#{@repinfo['first_name']} #{@repinfo['last_name']}" %> </p>
+<p><%= "#{@repinfo['office']}" %></p>
+<p>Washington, DC 20510</p>
+<p><%= @letter.salutation(@repinfo) %></p>
+<p><%= @letter.body %></p>
