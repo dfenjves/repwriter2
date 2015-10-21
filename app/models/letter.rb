@@ -10,4 +10,17 @@ class Letter < ActiveRecord::Base
     end    
   end
 
+  def recipient_address(representative)
+    "The Honorable #{representative['first_name']} #{representative['last_name']}
+     #{representative['office']}
+     Washington, DC 20510"
+  end
+
+  def sender_full_address
+    "#{self.sender_name}
+    #{self.sender_email}
+    #{self.sender_address}
+    #{self.sender_city}, #{self.sender_state} #{self.sender_zip}    "
+  end
+
 end
