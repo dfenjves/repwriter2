@@ -1,4 +1,4 @@
-
+require "pry"
 
 class LettersController < ApplicationController
 
@@ -18,7 +18,13 @@ def index
   end
 
   def show
+    set_letter
+  end
 
+  def pdf
+    prawn_document(:page_layout => :landscape) do |pdf|
+      pdf.text "Hello World"
+    end
   end
 
   private
