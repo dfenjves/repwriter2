@@ -1,3 +1,5 @@
 prawn_document do |pdf|
-  pdf.text "Look! I'm a PDF"
+  pdf.text @letter.salutation(@repinfo)
+  pdf.text @letter.body
+
 end

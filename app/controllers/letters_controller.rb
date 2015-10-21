@@ -22,6 +22,8 @@ def index
   end
 
   def generate
+    set_letter
+    @repinfo = LegislatorFinder.new.find_by_bioguide_id(@letter.rep_id)
     respond_to do |format|
       format.pdf
     end
