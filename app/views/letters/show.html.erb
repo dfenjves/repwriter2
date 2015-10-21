@@ -4,3 +4,7 @@
 <p>Washington, DC 20510</p>
 <p><%= @letter.salutation(@repinfo) %></p>
 <p><%= @letter.body %></p>
+<p><%= @letter.sender_name %></p>
+<p><%= @letter.sender_email %></p>
+<p><%= @letter.sender_address %></p>
+<p><%= @letter.sender_city %>, <%= @letter.sender_state %> <%= @letter.sender_zip %> </p>

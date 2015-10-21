@@ -29,7 +29,7 @@ def index
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def letter_params
-      params.require(:letter).permit(:rep_id, :body, :sender_name, :sender_email, :sender_address)
+      params.require(:letter).permit(:rep_id, :body, :sender_name, :sender_email, :sender_address, :sender_city, :sender_state, :sender_zip)
     end
 
 end

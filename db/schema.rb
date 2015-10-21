@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021151351) do
+ActiveRecord::Schema.define(version: 20151021172703) do
 
   create_table "letters", force: :cascade do |t|
     t.string   "recipient_name"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20151021151351) do
     t.datetime "updated_at",        null: false
     t.boolean  "sent"
     t.string   "rep_id"
+    t.string   "sender_city"
+    t.string   "sender_state"
+    t.string   "sender_zip"
   end
 
 end
