@@ -21,9 +21,9 @@ def index
     set_letter
   end
 
-  def pdf
-    prawn_document(:page_layout => :landscape) do |pdf|
-      pdf.text "Hello World"
+  def generate
+    respond_to do |format|
+      format.pdf
     end
   end
 

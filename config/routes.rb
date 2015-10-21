@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'letters#index'
   post '/letters/new' => 'letters#new'
   resources :letters
-  get '/letters/:id/pdf' => 'letters#pdf'
+  get '/letters/:id/generate' => 'letters#generate'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
