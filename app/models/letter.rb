@@ -17,9 +17,7 @@ class Letter < ActiveRecord::Base
   end
 
   def sender_full_address
-    "#{self.sender_name}
-    #{self.sender_email}
-    #{self.sender_address}
+    "#{self.sender_address}
     #{self.sender_city}, #{self.sender_state} #{self.sender_zip}    "
   end
 
