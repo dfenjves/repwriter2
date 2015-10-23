@@ -14,7 +14,7 @@ class LegislatorFinder
   end
 
   def find_by_latlong(lat, long)
-    url = "https://congress.api.sunlightfoundation.com/locate?latitude=#{lat}&longitude=#{long}&apikey=#{Rails.application.secrets.sunlight_api_key}"
+    url = "https://congress.api.sunlightfoundation.com/legislators/locate?latitude=#{lat}&longitude=#{long}&apikey=#{Rails.application.secrets.sunlight_api_key}"
     HTTParty.get(url)['results']
   end
 
