@@ -2,11 +2,13 @@ require "pry"
 
 class LettersController < ApplicationController
 
-def index
+
+  def index
   end
 
   def new
-    @repinfo = LegislatorFinder.new.find_by_zip(params[:zip])
+    location=Geokit::Geocoders::GoogleGeocoder.geocode "#{params[:sender_address]}, #{params[:sender_city]}, #{params[:sender_state]} #{params[:sender_zip]}"
+    @repinfo = LegislatorFinder.new.find_by_latlong(location.lat, location.lng)
     @letter = Letter.new
   end
 

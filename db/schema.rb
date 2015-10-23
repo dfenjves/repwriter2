@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021172703) do
+ActiveRecord::Schema.define(version: 20151022211550) do
 
   create_table "letters", force: :cascade do |t|
     t.string   "recipient_name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20151021172703) do
     t.string   "sender_city"
     t.string   "sender_state"
     t.string   "sender_zip"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
