@@ -10,6 +10,7 @@ class LettersController < ApplicationController
     location=Geokit::Geocoders::GoogleGeocoder.geocode "#{params[:sender_address]}, #{params[:sender_city]}, #{params[:sender_state]} #{params[:sender_zip]}"
     @repinfo = LegislatorFinder.new.find_by_latlong(location.lat, location.lng)
     @local_repinfo = LocalLegislatorFinder.new.find_by_latlong(location.lat, location.lng)
+    # binding.pry
     @letter = Letter.new
   end
 
