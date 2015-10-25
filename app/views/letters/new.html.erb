@@ -2,9 +2,15 @@
 
 <%= form_for @letter do |f|%>
   <h2> Who is this letter for? </h2>
+  <h3> National </h3>
   <% @repinfo.each do |legislator| %>
     <%= f.radio_button :rep_id, legislator['bioguide_id'] %>
     <%= f.label :rep_id, "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %>
+  <% end %>
+  <h3> Local</h3>
+  <% @local_repinfo.each do |legislator| %>
+    <%= f.radio_button :rep_id, legislator['id'] %>
+    <%= f.label :rep_id, "#{legislator['first_name']} #{legislator['last_name']}" %>
   <% end %>
   <h2>Dear Representative,</h2>
   <%= f.text_area :body %>
