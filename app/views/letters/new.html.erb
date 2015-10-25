@@ -4,7 +4,7 @@
   <h2> Who is this letter for? </h2>
   <h3> National </h3>
   <% @repinfo.each do |legislator| %>
-    <%= f.radio_button :rep_id, legislator['bioguide_id'] %>
+    <%= f.radio_button :rep_id, "FED-#{legislator['bioguide_id']}" %>
     <%= f.label :rep_id, "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %>
   <% end %>
   <h3> State</h3>

@@ -1,13 +1,21 @@
 class Letter < ActiveRecord::Base
 
   def salutation(representative)
-    if representative["title"].include?("Sen")
-      "Dear Senator #{representative['last_name']},"
-    elsif representative["title"] == "Rep" && representative["gender"] == "F"
-      "Dear Congresswoman #{representative['last_name']},"
+    if representative["title"]
+      if representative["title"].include?("Sen")
+        "Dear Senator #{representative['last_name']},"
+      elsif representative["title"] == "Rep" && representative["gender"] == "F"
+        "Dear Congresswoman #{representative['last_name']},"
+      else
+        "Dear Congressman #{representative['last_name']},"
+      end
     else
-      "Dear Congressman #{representative['last_name']},"
-    end    
+      if representative['chamber'] == "lower"
+        "Dear Representative #{representative['last_name']},"
+      else
+        "Dear Senator #{representative['last_name']}"
+      end
+    end
   end
 
   def recipient_address(representative)

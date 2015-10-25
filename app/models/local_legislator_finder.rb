@@ -8,8 +8,8 @@ class LocalLegislatorFinder
   # end
 
   def find_by_bioguide_id(bioguide_id)
-    url = "https://congress.api.sunlightfoundation.com/legislators?bioguide_id=#{bioguide_id}&apikey=#{Rails.application.secrets.sunlight_api_key}"
-    HTTParty.get(url)['results'].first
+    url = "http://openstates.org/api/v1/legislators/#{bioguide_id}"
+    HTTParty.get(url)
   end
 
   def find_by_latlong(lat, long)
