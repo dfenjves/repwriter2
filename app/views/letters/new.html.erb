@@ -10,6 +10,7 @@
   <h3> State</h3>
   <% @local_repinfo.each do |legislator| %>
     <%= f.radio_button :rep_id, legislator['id'] %>
+    <img src=<%= legislator['photo_url'] %>>
     <%= f.label :rep_id, "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %>
   <% end %>
   <h2>Dear Representative,</h2>
