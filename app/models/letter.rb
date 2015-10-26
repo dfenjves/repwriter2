@@ -16,17 +16,35 @@ class Letter < ActiveRecord::Base
         "Dear Senator #{representative['last_name']}"
       end
     end
+  end 
+
+  def recipient_city_state_zip(representative)
+    if representative['title']
+      "Washington, DC 20510"
+    else
+      representative['offices'][0]['address'].split("\n")[1]
+    end
   end
 
   def recipient_address(representative)
+    if representative['title']
+      representative['office']
+    else
+      representative['offices'][0]['address'].split("\n")[0]
+    end
+  end
+
+  def recipient_full_address(representative)
     "The Honorable #{representative['first_name']} #{representative['last_name']}
-     #{representative['office']}
-     Washington, DC 20510"
+     #{recipient_address(representative)}
+     #{recipient_city_state_zip(representative)}
+     "
   end
 
   def sender_full_address
     "#{self.sender_address}
     #{self.sender_city}, #{self.sender_state} #{self.sender_zip}    "
   end
+
 
 end

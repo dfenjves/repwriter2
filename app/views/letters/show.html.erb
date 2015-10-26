@@ -1,7 +1,7 @@
 
 <p>The Honorable <%= "#{@repinfo['first_name']} #{@repinfo['last_name']}" %> </p>
-<p><%= "#{@repinfo['office']}" %></p>
-<p>FIX - not dynamic!! Washington, DC 20510</p>
+<p><%= @letter.recipient_address(@repinfo) %></p>
+<p><%= @letter.recipient_city_state_zip(@repinfo) %></p>
 
 <p><%= @letter.salutation(@repinfo) %></p>
 <p><%= @letter.body %></p>
