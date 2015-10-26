@@ -17,7 +17,6 @@ class LettersController < ApplicationController
   def create
     @letter = Letter.create(letter_params)
     get_representative_info(@letter)
-    binding.pry
     @letter.save
     render :show
   end

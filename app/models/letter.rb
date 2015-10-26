@@ -22,7 +22,7 @@ class Letter < ActiveRecord::Base
     if representative['title']
       "Washington, DC 20510"
     else
-      representative['offices'][0]['address'].split("\n")[1]
+      representative['offices'][0]['address'].split("\n").last
     end
   end
 
