@@ -1,12 +1,74 @@
-<h1>Write your Representative</h1>
-<%= form_tag("/letters/new", method: "post") do %>
-    <%= label_tag(:sender_address, "Address") %>
-    <%= text_field_tag(:sender_address) %>
-    <%= label_tag(:sender_city, "City:") %>
-    <%= text_field_tag(:sender_city) %>
-    <%= label_tag(:sender_state, "State:") %>
-    <%= text_field_tag(:sender_state) %>
-    <%= label_tag(:sender_zip, "Zip Code:") %>
-    <%= text_field_tag(:sender_zip) %>
-    <%= submit_tag %>
-<% end %>
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="img/profile.png" alt="">
+                <div class="intro-text">
+                    <span class="name">RepWriter</span>
+                    <hr class="star-light">
+                    <span class="skills">Take the pain out of writing your representative.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Get Started</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <%= form_tag("/letters/new", method: "post", name:"sentMessage", id:"contactForm") do %>
+                      <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <%= label_tag(:sender_address, "Address") %>
+                        <%= text_field_tag :sender_address, nil, :class=>"form-control", :placeholder => "Address", :required => true, :"data-validation-required-message"=>"Please enter your Address." %>
+                        <p class="help-block text-danger"></p>
+                        </div>
+                      </div>
+
+                      <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <%= label_tag(:sender_city, "city") %>
+                        <%= text_field_tag :sender_city, nil, :class=>"form-control", :placeholder => "city", :required => true, :"data-validation-required-message"=>"Please enter your city." %>
+                        <p class="help-block text-danger"></p>
+                        </div>
+                      </div>
+
+                      <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <%= label_tag(:sender_state, "state") %>
+                        <%= text_field_tag :sender_state, nil, :class=>"form-control", :placeholder => "state", :required => true, :"data-validation-required-message"=>"Please enter your state." %>
+                        <p class="help-block text-danger"></p>
+                        </div>
+                      </div>
+
+                      <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <%= label_tag(:sender_zip, "zip") %>
+                        <%= text_field_tag :sender_zip, nil, :class=>"form-control", :placeholder => "zip", :required => true, :"data-validation-required-message"=>"Please enter your zip." %>
+                        <p class="help-block text-danger"></p>
+                        </div>
+                      </div>
+                      <br>
+                      <div id="success"></div>
+                      <div class="row">
+                            <div class="form-group col-xs-12">
+                                <%= submit_tag nil, :class => "btn btn-success btn-lg" %>
+                                <!-- <button type="submit" class="btn btn-success btn-lg">Submit</button> -->
+                            </div>
+                        </div>
+                      
+                    <% end %>                    
+                </div>
+            </div>
+        </div>
+    </section>
