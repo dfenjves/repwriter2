@@ -5,6 +5,7 @@
   <h3> National </h3>
   <% @repinfo.each do |legislator| %>
     <%= f.radio_button :rep_id, "FED-#{legislator['bioguide_id']}" %>
+    <img src=<%= "http://bioguide.congress.gov/bioguide/photo/#{legislator['last_name'].first}/#{legislator['bioguide_id']}.jpg" %>>
     <%= f.label :rep_id, "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %>
   <% end %>
   <h3> State</h3>
