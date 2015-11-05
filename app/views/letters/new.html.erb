@@ -7,8 +7,8 @@
         <h3> National </h3>
         <div class="radio">
           <% @repinfo.each do |legislator| %>
-            <div class="col-xs-4">
-              <img class="img-circle img-responsive img-radio rep-photo" src=<%= "http://bioguide.congress.gov/bioguide/photo/#{legislator['last_name'].first}/#{legislator['bioguide_id']}.jpg" %>>
+            <div class="col-xs-4 text-center">
+              <img class="img-circle img-responsive img-radio img-center rep-photo" src=<%= "http://bioguide.congress.gov/bioguide/photo/#{legislator['last_name'].first}/#{legislator['bioguide_id']}.jpg" %>>
               <%= f.radio_button :rep_id, "FED-#{legislator['bioguide_id']}", class:"hidden" %>
               <button type="button" class="btn btn-primary btn-radio"><%= "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %></button>
             </div>
@@ -18,8 +18,8 @@
       <div class="row">
         <h3> State</h3>
         <% @local_repinfo.each do |legislator| %>
-          <div class="col-xs-4">
-            <img class="img-circle img-responsive img-radio rep-photo" src=<%= legislator['photo_url'] %>>
+          <div class="col-xs-4 text-center">
+            <img class="img-circle img-responsive img-radio img-center rep-photo" src=<%= legislator['photo_url'] %>>
             <%= f.radio_button :rep_id, legislator['id'], class:"hidden" %>
             <button type="button" class="btn btn-primary btn-radio"><%= "#{legislator['first_name']} #{legislator['last_name']} (#{legislator['chamber']})" %></button>
           </div>
