@@ -25,16 +25,26 @@
           </div>
         <% end %>
       </div>
-      <h2>Dear Representative,</h2>
-      <%= f.text_area :body %>
-      <h2>Sincerely,</h2>
-      <p><%= f.text_field :sender_name, :placeholder => "Your Name"  %></p>
-      <p><%= f.text_field :sender_email, :placeholder => "Your Email" %></p>
-      <p><%= f.text_area :sender_address, :placeholder => "Your Address" %></p>
-      <p><%= f.text_field :sender_city, :placeholder => "City"  %></p>
-      <p><%= f.text_field :sender_state, :placeholder => "State" %></p>
-      <p><%= f.text_field :sender_zip, :placeholder => "Zip" %></p>
-      <p><%= f.submit %></p>
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Dear Representative,</h3>
+          <%= f.text_area :body, class: "form-control", rows:"6"  %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-7">
+          <h2>Sincerely,</h2>
+          <p><%= f.text_field :sender_name, :placeholder => "Your Name", class:"form-control"  %></p>
+          <p><%= f.text_field :sender_email, :placeholder => "Your Email", class:"form-control" %></p>
+          <p><%= f.text_area :sender_address, :placeholder => "Your Address", class:"form-control"%></p>
+          <p><%= f.text_field :sender_city, :placeholder => "City", class:"form-control"  %></p>
+          <p><%= f.text_field :sender_state, :placeholder => "State", class:"form-control" %></p>
+          <p><%= f.text_field :sender_zip, :placeholder => "Zip", class:"form-control" %></p>
+        </div>
+      </div>
+      <div class="row text-center">
+        <%= f.button("Create My Letter", type: 'submit', class: "btn btn-primary") %>
+      </div>
     <% end %>
   </div>
 </div>
