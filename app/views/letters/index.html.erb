@@ -1,12 +1,23 @@
-<h1>Write your Representative</h1>
-<%= form_tag("/letters/new", method: "post") do %>
-    <%= label_tag(:sender_address, "Address") %>
-    <%= text_field_tag(:sender_address) %>
+<div class="text-center">
+  <h1 class="cover-heading">Write your Representative</h1>
+  <p class="lead">Writing your elected representatives is important. It's also a pain. We make the process as simple and easy as humanly possible.</p>
+</div>
+<%= form_tag("/letters/new", method: "post", class:"hidden-form") do %>
+    <div class="form-group">
+      <%= label_tag(:sender_address, "Address") %>
+      <%= text_field_tag(:sender_address) %>
+    </div>
+    <div class="form-group">
     <%= label_tag(:sender_city, "City:") %>
     <%= text_field_tag(:sender_city) %>
+    </div>
+    <div class="form-group">
     <%= label_tag(:sender_state, "State:") %>
     <%= text_field_tag(:sender_state) %>
+    </div>
+    <div class="form-group">
     <%= label_tag(:sender_zip, "Zip Code:") %>
     <%= text_field_tag(:sender_zip) %>
-    <%= submit_tag %>
+    </div>
+    <%= button_tag("Submit", type: 'submit', class: "btn btn-primary") %>
 <% end %>
