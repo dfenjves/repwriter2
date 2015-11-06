@@ -1,13 +1,17 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 letter paper paper-lift">
+    <p>The Honorable <%= "#{@repinfo['first_name']} #{@repinfo['last_name']}" %> </p>
+    <p><%= @letter.recipient_address(@repinfo) %></p>
+    <p><%= @letter.recipient_city_state_zip(@repinfo) %></p>
 
-<p>The Honorable <%= "#{@repinfo['first_name']} #{@repinfo['last_name']}" %> </p>
-<p><%= @letter.recipient_address(@repinfo) %></p>
-<p><%= @letter.recipient_city_state_zip(@repinfo) %></p>
+    <p><%= @letter.salutation(@repinfo) %></p>
+    <p><%= @letter.body %></p>
+    <p><%= @letter.sender_name %></p>
+    <p><%= @letter.sender_email %></p>
+    <p><%= @letter.sender_address %></p>
+    <p><%= @letter.sender_city %>, <%= @letter.sender_state %> <%= @letter.sender_zip %> </p> 
 
-<p><%= @letter.salutation(@repinfo) %></p>
-<p><%= @letter.body %></p>
-<p><%= @letter.sender_name %></p>
-<p><%= @letter.sender_email %></p>
-<p><%= @letter.sender_address %></p>
-<p><%= @letter.sender_city %>, <%= @letter.sender_state %> <%= @letter.sender_zip %> </p> 
+    <a href='/letters/<%= @letter.id %>/generate.pdf'><button>Create PDF</button></a>
+  </div>
 
-<a href='/letters/<%= @letter.id %>/generate.pdf'><button>Create PDF</button></a>
+</div>

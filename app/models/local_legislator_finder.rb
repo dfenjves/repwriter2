@@ -14,7 +14,7 @@ class LocalLegislatorFinder
 
   def find_by_latlong(lat, long)
     url = "http://openstates.org/api/v1/legislators/geo/?lat=#{lat}&long=#{long}&apikey=#{Rails.application.secrets.sunlight_api_key}"
-    HTTParty.get(url)
+    HTTParty.get(url) 
   end
 
 end
